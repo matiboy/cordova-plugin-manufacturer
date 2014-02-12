@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.danielluxemburg.cordova.manufacturer"
+    version="0.0.1">
+    <name>Manufacturer</name>
+    <description>Cordova Manufacturer Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,device,manufacturer</keywords>
+    <repo>https://github.com/dluxemburg/cordova-plugin-manufacturer</repo>
+    <issue>https://github.com/dluxemburg/cordova-plugin-manufacturer/issues</issue>
+
+    <js-module src="www/manufacturer.js" name="manufacturer">
+        <clobbers target="manufacturer" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Manufacturer" >
+                <param name="android-package" value="com.danielluxemburg.cordova.manufacturer.Manufacturer"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Manufacturer.java" target-dir="src/com/danielluxemburg/cordova/manufacturer" />
+    </platform>
+
+</plugin>
