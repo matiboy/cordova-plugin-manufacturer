@@ -25,7 +25,7 @@ This plugin draws *heavily* from [org.apache.cordova.device](https://github.com/
 
 ## Purpose
 
-The primary motivation for this plugin is for addressing the issues like the ones described [here](http://stackoverflow.com/questions/18100442/samsung-galaxy-devices-cant-use-geolocation-getcurrentposition) and [here](http://community.phonegap.com/nitobi/topics/geolocation_works_with_one_android_device_but_not_another), where different brands of Android phone exhibit different behavior (specifically with geolocation).
+To get the manufacturer name on Android.
 
 ## Usage
 
@@ -38,7 +38,7 @@ The primary motivation for this plugin is for addressing the issues like the one
 
 ## Installation
 
-    cordova plugin add com.danielluxemburg.cordova.manufacturer
+    cordova plugin add https://github.com/matiboy/cordova-plugin-manufacturer.git
 
 ## Properties
 

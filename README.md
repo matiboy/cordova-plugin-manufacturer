@@ -17,6 +17,6 @@
          under the License.
 -->
 
-# org.apache.cordova.device
+# Manufacturer plugin
 
 Plugin documentation: [doc/index.md](doc/index.md)
