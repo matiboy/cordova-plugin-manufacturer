@@ -35,14 +35,12 @@ channel.waitForInitialization('onCordovaInfoReady');
  */
 function Manufacturer() {
     this.name = null;
-    this.manufacturer = null;
 
     var me = this;
 
     channel.onCordovaReady.subscribe(function() {
-        me.getInfo(function(info) {
-            me.name = info.manufacturer;
-            me.manufacturer = info.manufacturer;
+        me.getInfo(function(manufacturer) {
+            me.name = manufacturer;
             channel.onCordovaInfoReady.fire();
         },function(e) {
             me.available = false;
@@ -57,8 +55,10 @@ function Manufacturer() {
  * @param {Function} successCallback The function to call when the heading data is available
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
-Device.prototype.getInfo = function(successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'Device.getManufacturer', arguments);
+Manufacturer.prototype.getInfo = function(successCallback, errorCallback) {
+    // Check that we are being passed 2 functions as arguments
+    argscheck.checkArgs('fF', 'Manufacturer.getManufacturer', arguments);
+    // Call native method without parameters
     exec(successCallback, errorCallback, "Manufacturer", "getManufacturer", []);
 };
 
