@@ -59,10 +59,8 @@ public class Manufacturer extends CordovaPlugin {
      * @return                  True if the action was valid, false if not.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("getManufacturerInfo")) {
-            JSONObject r = new JSONObject();
-            r.put("manufacturer", this.getManufacturer());
-            callbackContext.success(r);
+        if (action.equals("getManufacturer")) {
+            callbackContext.success(this.getManufacturer());
         }
         else {
             return false;
